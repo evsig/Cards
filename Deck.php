@@ -34,11 +34,11 @@ class Deck
         echo "\n".$this->Name."\n";
         $i =0;
         foreach ($this->deck as  $item){
-            foreach ($item as $value){
-                echo("{$value}{$value} ");
+            //foreach ($item as $value){
+                echo("{$item->getSuit()}{$item->getFace()} ");
                 $i++;
                 if ($i%28==0){echo "\n";}
-            }
+           // }
         }
     }
 
