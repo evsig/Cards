@@ -12,25 +12,45 @@ class Deck
     public $deck = [];
     public $count;
 
+    public $card;
+    /**
+     * @var string
+     */
+    private $Name;
+
+
     public function __construct()
     {
-        $this->deck[] = new Card;
+        $card =["",""];
+        $this->$card = new Card;
+//        $this->deck[] = $card;
+        $this->Name = "Deck";
     }
 
     public function printer()
     {
-        print_r($this->deck);
+        //print_r($this->deck);
+        //$deck = $this->deck;
+        echo "\n".$this->Name."\n";
+        $i =0;
+        foreach ($this->deck as  $item){
+            foreach ($item as $value){
+                echo("{$value}{$value} ");
+                $i++;
+                if ($i%28==0){echo "\n";}
+            }
+        }
     }
 
-    public function FillDeck()
+    public function fillDeck()
     {
     $suits = array(
-        "Spades", "Hearts", "Clubs", "Diamonds"
+        "♠", "♥", "♣", "♦"
     );
 
     $faces = array(
-        "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
-        "Nine", "Ten", "Jack", "Queen", "King", "Ace"
+        "2", "3", "4", "5", "6", "7", "8",
+        "9", "10", "J", "Q", "K", "A"
     );
     foreach ($suits as $suit)
         {
@@ -39,25 +59,36 @@ class Deck
                 $this->deck[] = array("face" => $face, "suit" => $suit);
             }
         }
-        $this->deck[] = array("face" =>"Joker", "suit" =>"Red");
-        $this->deck[] = array("face" =>"Joker", "suit" =>"Black");
+    $this->addJokers();
     return $this;
     }
 
-    public function ShakeDeck(){
+    public function addJokers(){
+        $this->deck[] = array("face" =>"J", "suit" =>"R");
+        $this->deck[] = array("face" =>"J", "suit" =>"B");
+        return $this;
+    }
+
+    public function shakeDeck(){
         $this->deck[] = shuffle($this->deck);
     }
     public function PutCardInDeck(){
+        //pushes the passed variables onto the end of Deck.
+        //The length of Deck increases by the number of variables pushed.
         $this->deck[] = array_push($this->deck,["face"=>"new","suit"=>"card"] );
     }
-    public function GetCardFromDeck(){
+    public function getCardFromDeck(){
+        //Pops and returns the value of the last element of the Deck,
+        //shortening the Deck by one element.
         return array_pop($this->deck);
     }
 
-    public function PickUpDeck($index){
+    public function pickUpDeck($index){
         $count = count($this->deck);
-        for($i=1;$i<=$count;$i++) {
-            list($this->deck[($index + $i) % $count], $this->deck[$i - 1]) = array($this->deck[$i - 1], $this->deck[($index + $i) % $count]);
+
+        for($i=0;$i<=$count;$i++) {
+            list($this->deck[($index + $i) % $count], $this->deck[$count-($index-$i)])
+                = array($this->deck[$count-($index-$i)], $this->deck[($index + $i) % $count]);
         }
         return $this->deck;}
 

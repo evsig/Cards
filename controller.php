@@ -6,12 +6,19 @@ use Cards\Deck as Deck;
 
 $d = new Deck();
 
-$d->FillDeck();
+$d->fillDeck();
 
-$d->ShakeDeck();
+//$d->ShakeDeck();
 //$d->PutCardInDeck();
-//$d->GetCardFromDeck();
-print_r($d);
-$d->PickUpDeck(3);
 
-print_r($d);
+//$d->GetCardFromDeck();
+$d->printer();
+$d->pickUpDeck(3);
+
+//$d->addJokers();
+
+$d->printer();
+
+
+//print_r($d);
+//var_dump($d);

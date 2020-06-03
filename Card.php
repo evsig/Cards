@@ -2,7 +2,7 @@
 
 namespace Cards;
 
-class Card
+class Card //extends ArrayIterator
 {
     public $suit;
     public $face;
