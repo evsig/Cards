@@ -21,10 +21,10 @@ class Deck
 
     public function __construct()
     {
-        $card =["",""];
-        $this->$card = new Card;
+        //$card =["",""];
+        $this->deck[] = new Card("♠", "2");
 //        $this->deck[] = $card;
-        $this->Name = "Deck";
+        //$this->Name = "Deck";
     }
 
     public function printer()
