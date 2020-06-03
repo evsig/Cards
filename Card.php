@@ -7,6 +7,12 @@ class Card //extends ArrayIterator
     public $suit;
     public $face;
 
+    public function __construct(string $suit,string $face)
+    {
+        $this->suit = $suit;
+        $this->face = $face;
+    }
+
     public function getFace()
     {
         return $this->face;

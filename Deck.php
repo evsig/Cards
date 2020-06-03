@@ -21,10 +21,7 @@ class Deck
 
     public function __construct()
     {
-        $card =["",""];
-        $this->$card = new Card;
-//        $this->deck[] = $card;
-        $this->Name = "Deck";
+
     }
 
     public function printer()
@@ -34,11 +31,12 @@ class Deck
         echo "\n".$this->Name."\n";
         $i =0;
         foreach ($this->deck as  $item){
-            foreach ($item as $value){
-                echo("{$value}{$value} ");
+            //foreach ($item as $value){
+                //echo("{$item}{$value} ");
+            echo("{$item->getSuit()}{$item->getFace()} ");
                 $i++;
                 if ($i%28==0){echo "\n";}
-            }
+            //}
         }
     }
 
@@ -56,7 +54,7 @@ class Deck
         {
             foreach ($faces as $face)
             {
-                $this->deck[] = array("face" => $face, "suit" => $suit);
+                $this->deck[] = new Card($suit,$face);
             }
         }
     $this->addJokers();
