@@ -40,7 +40,7 @@ class Deck
         }
     }
 
-    public function fillDeck()
+    public function fillDeck($deckName)
     {
     $suits = array(
         "♠", "♥", "♣", "♦"
@@ -54,7 +54,7 @@ class Deck
         {
             foreach ($faces as $face)
             {
-                $this->deck[] = new Card($suit,$face);
+                $this->deck[$deckName][] = new Card($suit,$face);
             }
         }
     $this->addJokers();
