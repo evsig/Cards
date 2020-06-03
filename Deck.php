@@ -33,12 +33,12 @@ class Deck
         //$deck = $this->deck;
         echo "\n".$this->Name."\n";
         $i =0;
-        foreach ($this->deck as  $item){
-            foreach ($item as $value){
-                echo("{$value}{$value} ");
+        foreach ($this->deck as  $item=>$value){
+            //foreach ($item as $value){
+                echo("{$item}{$value} ");
                 $i++;
                 if ($i%28==0){echo "\n";}
-            }
+            //}
         }
     }
 
