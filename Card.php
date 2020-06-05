@@ -6,6 +6,8 @@ class Card //extends ArrayIterator
 {
     public $suit;
     public $face;
+    public $deck = [];
+    private $card;
 
     public function __construct(string $face,string $suit)
     {
@@ -31,5 +33,13 @@ class Card //extends ArrayIterator
     public function setSuit($suit): void
     {
         $this->suit = $suit;
+    }
+
+    public function addCardWithCard($face, $suit, $deck){
+        $card = new Card($face,$suit);
+        //$deck = $this->deck;
+        $deck[] = $this->card;
+        $deck[] = $card;
+        return $deck;
     }
 }

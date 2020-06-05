@@ -3,7 +3,6 @@
 namespace Cards;
 require 'Card.php';
 use Cards\Card as Card;
-use function MongoDB\BSON\fromJSON;
 
 class Deck
 {
@@ -42,7 +41,6 @@ class Deck
             echo "Deck is destroed";
         }
         else {
-            var_dump($this->deck);
             $i = 0;
             foreach ($this->deck as $key=> $item) {
                 echo("{$item->getSuit()}{$item->getFace()} ");
@@ -85,6 +83,13 @@ class Deck
         else $this->deck[] = $card;
     }
 
+    public function addCardWithCard($face, $suit){
+        $card = new Card($face,$suit);
+        $this->deck[] = $this->card;
+        $this->deck[] = $card;
+        return $this->deck;
+    }
+
     public function getCardFromDeck(){
         if (empty($this->deck)){
             unset($this->deck);
@@ -106,10 +111,11 @@ class Deck
     }
 
     public function addDeckInDeck($array){
-        for ($i=0;$i<=count($array);$i++) {
-            array_push($this->deck, $array[$i]);
-        }
-    return $this->deck;
+//        $array= new Deck();
+//        for ($i=0;$i<=count($array);$i++) {
+//            array_push($this->deck, $array[$i]);
+//        }
+    return $this->deck = $this->deck + $array;
     }
 
     public function validator($suit,$face){
