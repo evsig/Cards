@@ -44,7 +44,7 @@ class Deck
         else {
             var_dump($this->deck);
             $i = 0;
-            foreach ($this->deck as $item) {
+            foreach ($this->deck as $key=> $item) {
                 echo("{$item->getSuit()}{$item->getFace()} ");
                 $i++;
                 if ($i % 13 == 0) {
@@ -86,11 +86,11 @@ class Deck
     }
 
     public function getCardFromDeck(){
-        //Pops and returns the value of the last element of the Deck,
-        //shortening the Deck by one element
         if (empty($this->deck)){
             unset($this->deck);
             return "The deck is destroyed";
+            //Pops and returns the value of the last element of the Deck,
+            //shortening the Deck by one element
         }
         else return array_pop($this->deck);
     }

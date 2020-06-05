@@ -25,9 +25,12 @@ $d->printer();*/
 
 
 //unset($d);
-//$d->addJokers();
+$d->addJokers();
+
 $d->addCardInDeck("A","♠");
 $d->printer();
 $d->addCardInDeck("R","J");
 $d->addCardInDeck("A","♠");
 $d->printer();
+//var_dump($d);
+
