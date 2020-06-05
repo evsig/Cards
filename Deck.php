@@ -42,6 +42,7 @@ class Deck
             echo "Deck is destroed";
         }
         else {
+            var_dump($this->deck);
             $i = 0;
             foreach ($this->deck as $item) {
                 echo("{$item->getSuit()}{$item->getFace()} ");
@@ -81,7 +82,7 @@ class Deck
         if (in_array($card,$this->deck)){
             echo "\nYour card {$suit}{$face} is exist in deck";
         }
-        else $this->deck[] = array_push($this->deck, new Card($face,$suit));
+        else $this->deck[] = $card;
     }
 
     public function getCardFromDeck(){
