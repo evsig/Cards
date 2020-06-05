@@ -11,19 +11,23 @@ $d = new Deck();
 //$d->ShakeDeck();
 //$d->PutCardInDeck();
 
-$d->addJokers();
+//check destroing empty deck
+/*$d->addJokers();
 $d->printer();
 $d->GetCardFromDeck();
 $d->printer();
 $d->GetCardFromDeck();
+$d->GetCardFromDeck();
+$d->GetCardFromDeck();
+$d->printer();*/
+
 //$d->pickUpDeck(3);
 
 
 //unset($d);
-//$d->PutCardInDeck("B","J");
-
-$d->GetCardFromDeck();
-$d->GetCardFromDeck();
+//$d->addJokers();
+$d->addCardInDeck("A","♠");
 $d->printer();
-
-//var_dump($d);
+$d->addCardInDeck("R","J");
+$d->addCardInDeck("A","♠");
+$d->printer();
