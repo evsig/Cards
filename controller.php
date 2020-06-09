@@ -11,8 +11,9 @@ $c1 = new Card("9","♠");
 $c2 = new Card("2","♠");
 
 //create new deck
-//$d = new Deck();
+$d = new Deck();
 $d2 = new Deck();
+$d->addJokers();
 
 //fill deck 54 cards with Jokers
 //$d2->fillDeck();
@@ -54,6 +55,8 @@ $d->printer();*/
 //var_dump($c);
 $d2->addCardWithCard($c1,$c2);
 //$d->addCardInDeck("A","♠");
-//$d2->printer();
 
-var_dump($d2);
+$d2->printer();
+$d->addDeckInDeck($d2);
+$d->printer();
+//var_dump($d2);

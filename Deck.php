@@ -103,6 +103,7 @@ class Deck
         return $this->deck;
     }
         public function addCardWithCard($card1, $card2){
+        //$deck = new deck
         $this->deck[] = $card1;
         $this->deck[] = $card2;
 //        $deck[] = $this->card;
@@ -110,11 +111,9 @@ class Deck
     }
 
     public function addDeckInDeck($deck){
-//        $array= new Deck();
-//        for ($i=0;$i<=count($array);$i++) {
-//            array_push($this->deck, $array[$i]);
-//        }
-    return $this->deck = $this->deck + $deck;
+        $deck1= (array)$deck;
+        $result = array_merge($this->deck,$deck1);
+        return $result;
     }
 
     public function validator($suit,$face){
