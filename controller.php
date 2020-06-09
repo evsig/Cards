@@ -4,24 +4,24 @@ echo 'Cards';
 require 'Deck.php';
 //require_once 'Card.php';
 use Cards\Deck as Deck;
-//use Cards\Deck as Card;
 use Cards\Card as Card;
 
 //create new card
-$c = new Card("9","♠");
+$c1 = new Card("9","♠");
+$c2 = new Card("2","♠");
 
 //create new deck
-$d = new Deck();
+//$d = new Deck();
 $d2 = new Deck();
 
 //fill deck 54 cards with Jokers
-//$d->fillDeck();
+//$d2->fillDeck();
 
 //get random order of cards in the deck
 //$d->ShakeDeck();
 
 //check destroing empty deck
-//The deck is destroyed using the method unset();
+//The deck is destroyed using the method is unset();
 /*$d->addJokers();
 $d->printer();
 $d->GetCardFromDeck();
@@ -51,7 +51,9 @@ $d->printer();*/
 //$d2->addCardInDeck("Q","♠");
 //$d->addDeckInDeck($d2);
 //$d->printer();
-var_dump($c);
-$c->addCardWithCard("R","J",$d2);
+//var_dump($c);
+$d2->addCardWithCard($c1,$c2);
 //$d->addCardInDeck("A","♠");
-$d2->printer();
+//$d2->printer();
+
+var_dump($d2);

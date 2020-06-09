@@ -83,13 +83,6 @@ class Deck
         else $this->deck[] = $card;
     }
 
-    public function addCardWithCard($face, $suit){
-        $card = new Card($face,$suit);
-        $this->deck[] = $this->card;
-        $this->deck[] = $card;
-        return $this->deck;
-    }
-
     public function getCardFromDeck(){
         if (empty($this->deck)){
             unset($this->deck);
@@ -109,13 +102,19 @@ class Deck
         }
         return $this->deck;
     }
+        public function addCardWithCard($card1, $card2){
+        $this->deck[] = $card1;
+        $this->deck[] = $card2;
+//        $deck[] = $this->card;
+        return $this->deck;
+    }
 
-    public function addDeckInDeck($array){
+    public function addDeckInDeck($deck){
 //        $array= new Deck();
 //        for ($i=0;$i<=count($array);$i++) {
 //            array_push($this->deck, $array[$i]);
 //        }
-    return $this->deck = $this->deck + $array;
+    return $this->deck = $this->deck + $deck;
     }
 
     public function validator($suit,$face){
