@@ -39,9 +39,10 @@ $d->printer();*/
 //$d->printer();
 
 //adding cards in deck
-//$d->addJokers();
-//$d->addCardInDeck("A","♠");
-//$d->printer();
+$d->addJokers();
+$d->printer();
+$d->addCardInDeck($c1);
+$d->printer();
 
 //adding existing cart in deck
 //$d->addCardInDeck("R","J");

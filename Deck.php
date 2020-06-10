@@ -36,14 +36,13 @@ class Deck
 
     public function printer()
     {
-        echo "\n".$this->Name."\n";
         if (empty($this->deck)){
             echo "Deck is destroed";
         }
         else {
             $i = 0;
-            foreach ($this->deck as $key=> $item) {
-                echo("{$item->getSuit()}{$item->getFace()} ");
+            foreach ($this->deck as $card) {
+                print_r($card);
                 $i++;
                 if ($i % 13 == 0) {
                     echo "\n";
@@ -75,10 +74,9 @@ class Deck
         $this->deck[] = shuffle($this->deck);
     }
 
-    public function addCardInDeck($face,$suit){
-        $card = new Card($face,$suit);
+    public function addCardInDeck($card){
         if (in_array($card,$this->deck)){
-            echo "\nYour card {$suit}{$face} is exist in deck";
+            echo "\nYour card {$card} is exist in deck";
         }
         else $this->deck[] = $card;
     }
