@@ -13,7 +13,7 @@ $c2 = new Card("2","♠");
 //create new deck
 $d = new Deck();
 $d2 = new Deck();
-$d->addJokers();
+//$d->addJokers();
 
 //fill deck 54 cards with Jokers
 //$d2->fillDeck();
@@ -34,12 +34,15 @@ $d->printer();*/
 
 //Method pickUpDeck($index); pick up the deck/
 //the $index indicates after which card account you need to pick up the deck
-//$d->pickUpDeck(3);
+$d->fillDeck();
+$d->pickUpDeck(3);
+$d->printer();
 
 //adding cards in deck
 //$d->addJokers();
 //$d->addCardInDeck("A","♠");
 //$d->printer();
+
 //adding existing cart in deck
 //$d->addCardInDeck("R","J");
 //$d->addCardInDeck("A","♠");
@@ -53,10 +56,10 @@ $d->printer();*/
 //$d->addDeckInDeck($d2);
 //$d->printer();
 //var_dump($c);
-$d2->addCardWithCard($c1,$c2);
+//$d2->addCardWithCard($c1,$c2);
 //$d->addCardInDeck("A","♠");
 
-$d2->printer();
-$d->addDeckInDeck($d2);
-$d->printer();
+//$d2->printer();
+//$d->addDeckInDeck($d2);
+//$d->printer();
 //var_dump($d2);

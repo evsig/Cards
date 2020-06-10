@@ -94,12 +94,9 @@ class Deck
     }
 
     public function pickUpDeck($index){
-        $count = count($this->deck);
-
-        for($i=0;$i<=$count;$i++) {
-            list($this->deck[($index + $i) % $count], $this->deck[$count-($index-$i)])
-                = array($this->deck[$count-($index-$i)], $this->deck[($index + $i) % $count]);
-        }
+        $part1 = array_slice($this->deck, $index);
+        $part2 = array_slice($this->deck, 0, $index);
+        $this->deck = array_merge($part1, $part2);
         return $this->deck;
     }
         public function addCardWithCard($card1, $card2){
