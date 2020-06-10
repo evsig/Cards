@@ -34,9 +34,9 @@ $d->printer();*/
 
 //Method pickUpDeck($index); pick up the deck/
 //the $index indicates after which card account you need to pick up the deck
-$d->fillDeck();
-$d->pickUpDeck(3);
-$d->printer();
+//$d->fillDeck();
+//$d->pickUpDeck(3);
+//$d->printer();
 
 //adding cards in deck
 //$d->addJokers();
@@ -63,3 +63,11 @@ $d->printer();
 //$d->addDeckInDeck($d2);
 //$d->printer();
 //var_dump($d2);
+
+//validator of faces & suits
+//$d->validator("A","♠");
+//$d->validator("A","1");
+//$d->validator("1","♠");
+//$d->validator("J","B");
+//$d->validator("J","R");
+//$d->validator("R","J");

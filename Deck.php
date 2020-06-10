@@ -113,18 +113,13 @@ class Deck
         return $result;
     }
 
-    public function validator($suit,$face){
-        foreach ($this->suits as $suit)
-        {
-            if ($this->suits == $suit || ($this->suits == ("R"||"B"))&($this->faces == ("J")))
-                foreach ($this->faces as $face)
-                {
-                    if ($this->faces == $face){
-                        return new Card($suit,$face);
-                    }
-                    else return "That face is not exist";
-                }
-            else return "That suit is not exist";
+    public function validator($face,$suit){
+        if (in_array($face,$this->faces) || ($face == "J" & $suit == ("B" || "R"))){
+            if (in_array($suit,$this->suits) || ($face == "J" & $suit == ("B" || "R"))){
+                print_r("\n!!!");}
+            else print_r( "\nThat suit - {$suit} is not exist");
         }
+        else print_r( "\nThat face - {$face} is not exist");
+
     }
 }
