@@ -9,13 +9,13 @@ class Deck
     /**
      * @var Card
      */
-    public $deck = [];
+    public $deck;
     public $count;
 
     public $card;
 
     public $suits;
-    private $faces;
+    public $faces;
     /**
      * @var string
      */
@@ -25,12 +25,12 @@ class Deck
     public function __construct()
     {
         $this->suits = array(
-            //"П","Ч","К","Б"
+            //"W","S","T","D"
             "♠", "♥", "♣", "♦"
         );
         $this->faces = array(
-            "2", "3", "4", "5", "6", "7", "8",
-            "9", "10", "J", "Q", "K", "A"
+            "2", "3"//, "4", "5", "6", "7", "8",
+            //"9", "10", "J", "Q", "K", "A"
         );
     }
 
@@ -41,8 +41,8 @@ class Deck
         }
         else {
             $i = 0;
-            foreach ($this->deck as $card) {
-                print_r($card);
+            foreach ($this->deck as $key=> $item) {
+                echo("{$item->getSuit()}{$item->getFace()} ");
                 $i++;
                 if ($i % 13 == 0) {
                     echo "\n";
@@ -53,6 +53,7 @@ class Deck
 
     public function fillDeck()
     {
+    unset($this->deck);
     foreach ($this->suits as $suit)
         {
             foreach ($this->faces as $face)
@@ -75,10 +76,14 @@ class Deck
     }
 
     public function addCardInDeck($card){
-        if (in_array($card,$this->deck)){
-            echo "\nYour card {$card} is exist in deck";
+        if (count($this->deck) >= 10){
+            return "Deck can't exist more than 54 cards";
         }
-        else $this->deck[] = $card;
+        else {
+            if (in_array($card, $this->deck)) {
+                echo "\nYour card {$card} is exist in deck";
+            } else $this->deck[] = $card;
+        }
     }
 
     public function getCardFromDeck(){
@@ -98,10 +103,8 @@ class Deck
         return $this->deck;
     }
         public function addCardWithCard($card1, $card2){
-        //$deck = new deck
         $this->deck[] = $card1;
         $this->deck[] = $card2;
-//        $deck[] = $this->card;
         return $this->deck;
     }
 

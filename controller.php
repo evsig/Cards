@@ -39,10 +39,11 @@ $d->printer();*/
 //$d->printer();
 
 //adding cards in deck
-$d->addJokers();
-$d->printer();
-$d->addCardInDeck($c1);
-$d->printer();
+$d->fillDeck();
+//$d->printer();
+//$d->addCardInDeck($c1);
+//$d->printer();
+//var_dump ($d);
 
 //adding existing cart in deck
 //$d->addCardInDeck("R","J");
@@ -62,7 +63,7 @@ $d->printer();
 
 //$d2->printer();
 //$d->addDeckInDeck($d2);
-//$d->printer();
+$d->printer();
 //var_dump($d2);
 
 //validator of faces & suits
@@ -72,3 +73,5 @@ $d->printer();
 //$d->validator("J","B");
 //$d->validator("J","R");
 //$d->validator("R","J");
+
+//var_dump($d->count);
