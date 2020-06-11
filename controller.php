@@ -1,8 +1,5 @@
 <?php
-echo 'Cards';
-
 require 'Deck.php';
-//require_once 'Card.php';
 use Cards\Deck as Deck;
 use Cards\Card as Card;
 
@@ -54,7 +51,7 @@ $d->fillDeck();
 //$d->addJokers();
 //$d2->addCardInDeck("A","♠");
 //$d2->addCardInDeck("J","♠");
-//$d2->addCardInDeck("Q","♠");
+$d->addCardInDeck($c1);
 //$d->addDeckInDeck($d2);
 //$d->printer();
 //var_dump($c);
@@ -75,3 +72,7 @@ $d->printer();
 //$d->validator("R","J");
 
 //var_dump($d->count);
+
+$deck = new Deck();
+$deck->deck[] = 'Ooops, i broke it';
+$deck->printer();

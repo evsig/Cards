@@ -76,8 +76,8 @@ class Deck
     }
 
     public function addCardInDeck($card){
-        if (count($this->deck) >= 10){
-            return "Deck can't exist more than 54 cards";
+        if (count($this->deck) >= 11){
+            echo "Deck can't exist more than 54 cards";
         }
         else {
             if (in_array($card, $this->deck)) {
