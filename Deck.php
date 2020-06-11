@@ -66,16 +66,24 @@ class Deck
     }
 
     public function addCardInDeck($card){
+        $face = $card->getFace();
+        $suit = $card->getSuit();
 
         if (count($this->deck) >= 54){
             echo "\nDeck can't exist more than 54 cards\n";
         }
         else {
+
             if (in_array($card, $this->deck)) {
                 echo "\nYour card {$card} is exist in deck\n";
             } else {
-                $this->validator($card->getFace(), $card->getSuit());
-                $this->deck[] = $card;
+                if (in_array($face,$this->faces) || ($face == "J" & $suit == ("B" || "R"))){
+                    if (in_array($suit,$this->suits) || ($face == "J" & $suit == ("B" || "R"))){
+                        $this->deck[] = $card;
+                    }
+                    else print_r( "\nThat suit - {$suit} is not exist\n");
+                }
+                else print_r( "\nThat face - {$face} is not exist\n");
             }
         }
     }
@@ -108,13 +116,13 @@ class Deck
         return $result;
     }
 
-    public function validator($face,$suit){
-        if (in_array($face,$this->faces) || ($face == "J" & $suit == ("B" || "R"))){
-            if (in_array($suit,$this->suits) || ($face == "J" & $suit == ("B" || "R"))){
-                return $card = new Card($face,$suit);}
-            else print_r( "\nThat suit - {$suit} is not exist\n");
-        }
-        else print_r( "\nThat face - {$face} is not exist\n");
-
-    }
+//    public function validator($face,$suit){
+//        if (in_array($face,$this->faces) || ($face == "J" & $suit == ("B" || "R"))){
+//            if (in_array($suit,$this->suits) || ($face == "J" & $suit == ("B" || "R"))){
+//                return $card = new Card($face,$suit);}
+//            else print_r( "\nThat suit - {$suit} is not exist\n");
+//        }
+//        else print_r( "\nThat face - {$face} is not exist\n");
+//
+//    }
 }
