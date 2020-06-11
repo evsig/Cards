@@ -60,11 +60,12 @@ $d->addCardInDeck($c1);
 
 //$d2->printer();
 //$d->addDeckInDeck($d2);
+$d->deck[] = 'zfdhznd';
 $d->printer();
 //var_dump($d2);
 
 //validator of faces & suits
-//$d->validator("A","♠");
+$d->validator("A","♠");
 //$d->validator("A","1");
 //$d->validator("1","♠");
 //$d->validator("J","B");

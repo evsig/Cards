@@ -42,10 +42,12 @@ class Deck
         else {
             $i = 0;
             foreach ($this->deck as $key=> $item) {
-                echo("{$item->getSuit()}{$item->getFace()} ");
-                $i++;
-                if ($i % 13 == 0) {
-                    echo "\n";
+                if ($item instanceof Card) {
+                    echo("{$item->getSuit()}{$item->getFace()} ");
+                    $i++;
+                    if ($i % 13 == 0) {
+                        echo "\n";
+                    }
                 }
             }
         }
