@@ -49,29 +49,19 @@ $d->printer();*/
 //$d->printer();
 
 //adding deck $d2 in deck $d
-$d->addJokers();
+//$d->addJokers();
 //$d2->addCardInDeck("A","♠");
 //$d2->addCardInDeck("J","♠");
-$d->addCardInDeck($c1);
-$d->addCardInDeck($wrongCard);
 //$d->addDeckInDeck($d2);
-$d->printer();
-//var_dump($c);
-//$d2->addCardWithCard($c1,$c2);
-//$d->addCardInDeck("A","♠");
+//$d->printer();
 
 //$d2->printer();
 //$d->addDeckInDeck($d2);
 //$d->printer();
-//var_dump($d2);
 
 //validator of faces & suits
-//$d->validator("A","♠");
-//$d->validator("A","1");
-//$d->validator("1","♠");
-//$d->validator("J","B");
-//$d->validator("J","R");
-//$d->validator("R","J");
-
-//var_dump($d->count);
+$d->addJokers();
+$d->addCardInDeck($c1);
+$d->addCardInDeck($wrongCard);
+$d->printer();
 

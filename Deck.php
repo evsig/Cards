@@ -105,24 +105,13 @@ class Deck
         return $this->deck;
     }
         public function addCardWithCard($card1, $card2){
-        $this->deck[] = $card1;
-        $this->deck[] = $card2;
+        $this->addCardInDeck($card1);
+        $this->addCardInDeck($card2);
         return $this->deck;
     }
 
     public function addDeckInDeck($deck){
         $deck1= (array)$deck;
-        $result = array_merge($this->deck,$deck1);
-        return $result;
+        return array_merge($this->deck,$deck1);
     }
-
-//    public function validator($face,$suit){
-//        if (in_array($face,$this->faces) || ($face == "J" & $suit == ("B" || "R"))){
-//            if (in_array($suit,$this->suits) || ($face == "J" & $suit == ("B" || "R"))){
-//                return $card = new Card($face,$suit);}
-//            else print_r( "\nThat suit - {$suit} is not exist\n");
-//        }
-//        else print_r( "\nThat face - {$face} is not exist\n");
-//
-//    }
 }

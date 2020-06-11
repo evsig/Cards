@@ -2,7 +2,7 @@
 
 namespace Cards;
 
-class Card //extends ArrayIterator
+class Card
 {
     public $suit;
     public $face;
@@ -32,12 +32,4 @@ class Card //extends ArrayIterator
     {
         $this->suit = $suit;
     }
-
-//    public function addCardWithCard($face, $suit, $deck){
-//        $card = new Card($face,$suit);
-//        //$deck = $this->deck;
-////        $deck[] = $this->card;
-//        $deck[] = $card;
-//        return $deck;
-//    }
 }
