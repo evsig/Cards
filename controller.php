@@ -6,6 +6,7 @@ use Cards\Card as Card;
 //create new card
 $c1 = new Card("9","♠");
 $c2 = new Card("2","♠");
+$wrongCard = new Card("2","2");
 
 //create new deck
 $d = new Deck();
@@ -36,7 +37,7 @@ $d->printer();*/
 //$d->printer();
 
 //adding cards in deck
-$d->fillDeck();
+//$d->fillDeck();
 //$d->printer();
 //$d->addCardInDeck($c1);
 //$d->printer();
@@ -48,24 +49,24 @@ $d->fillDeck();
 //$d->printer();
 
 //adding deck $d2 in deck $d
-//$d->addJokers();
+$d->addJokers();
 //$d2->addCardInDeck("A","♠");
 //$d2->addCardInDeck("J","♠");
 $d->addCardInDeck($c1);
+$d->addCardInDeck($wrongCard);
 //$d->addDeckInDeck($d2);
-//$d->printer();
+$d->printer();
 //var_dump($c);
 //$d2->addCardWithCard($c1,$c2);
 //$d->addCardInDeck("A","♠");
 
 //$d2->printer();
 //$d->addDeckInDeck($d2);
-$d->deck[] = 'zfdhznd';
-$d->printer();
+//$d->printer();
 //var_dump($d2);
 
 //validator of faces & suits
-$d->validator("A","♠");
+//$d->validator("A","♠");
 //$d->validator("A","1");
 //$d->validator("1","♠");
 //$d->validator("J","B");
@@ -74,6 +75,3 @@ $d->validator("A","♠");
 
 //var_dump($d->count);
 
-$deck = new Deck();
-$deck->deck[] = 'Ooops, i broke it';
-$deck->printer();

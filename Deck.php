@@ -6,21 +6,9 @@ use Cards\Card as Card;
 
 class Deck
 {
-    /**
-     * @var Card
-     */
     public $deck;
-    public $count;
-
-    public $card;
-
     public $suits;
     public $faces;
-    /**
-     * @var string
-     */
-    private $Name;
-
 
     public function __construct()
     {
@@ -29,8 +17,8 @@ class Deck
             "♠", "♥", "♣", "♦"
         );
         $this->faces = array(
-            "2", "3"//, "4", "5", "6", "7", "8",
-            //"9", "10", "J", "Q", "K", "A"
+            "2", "3", "4", "5", "6", "7", "8",
+            "9", "10", "J", "Q", "K", "A"
         );
     }
 
@@ -78,13 +66,17 @@ class Deck
     }
 
     public function addCardInDeck($card){
-        if (count($this->deck) >= 11){
-            echo "Deck can't exist more than 54 cards";
+
+        if (count($this->deck) >= 54){
+            echo "\nDeck can't exist more than 54 cards\n";
         }
         else {
             if (in_array($card, $this->deck)) {
-                echo "\nYour card {$card} is exist in deck";
-            } else $this->deck[] = $card;
+                echo "\nYour card {$card} is exist in deck\n";
+            } else {
+                $this->validator($card->getFace(), $card->getSuit());
+                $this->deck[] = $card;
+            }
         }
     }
 
@@ -119,10 +111,10 @@ class Deck
     public function validator($face,$suit){
         if (in_array($face,$this->faces) || ($face == "J" & $suit == ("B" || "R"))){
             if (in_array($suit,$this->suits) || ($face == "J" & $suit == ("B" || "R"))){
-                print_r("\n!!!");}
-            else print_r( "\nThat suit - {$suit} is not exist");
+                return $card = new Card($face,$suit);}
+            else print_r( "\nThat suit - {$suit} is not exist\n");
         }
-        else print_r( "\nThat face - {$face} is not exist");
+        else print_r( "\nThat face - {$face} is not exist\n");
 
     }
 }
